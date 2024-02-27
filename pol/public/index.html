@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 글귀 생성기</title>
+    <style>
+        /* Google Fonts를 사용한 북유럽 스타일의 폰트 */
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Open+Sans:wght@300;400&display=swap');
+
+        /* 기본 CSS 설정 */
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Nunito', sans-serif;
+            background: url('https://source.unsplash.com/random/1920x1080?nordic-landscape') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* 채팅 인터페이스 스타일 */
+        #chat-interface {
+            width: 90%;
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 입력란과 버튼 스타일 */
+        #userInput, #sendButton {
+            width: calc(100% - 40px);
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        
+        #sendButton {
+            cursor: pointer;
+            background-color: #5D5C61;
+            color: white;
+            font-weight: bold;
+            border: none;
+        }
+
+        /* 채팅 메시지 스타일 */
+        #chat {
+            height: 300px;
+            overflow-y: auto;
+            padding-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .chat-message {
+            margin: 5px 0;
+            padding: 10px;
+            background: #f1f1f1;
+            border-radius: 5px;
+        }
+
+        /* 어시스턴트 메시지는 다른 스타일로 표시 */
+        .chat-message.assistant {
+            background: #d1e8e2;
+        }
+    </style>
+</head>
+<body>
+    <div id="chat-interface">
+        <div id="chat"></div>
+        <input type="text" id="userInput" placeholder="여기에 질문을 입력하세요...">
+        <button id="sendButton">생성</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
